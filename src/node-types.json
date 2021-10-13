@@ -157,6 +157,10 @@
         {
           "type": "unary_expression",
           "named": true
+        },
+        {
+          "type": "underscore",
+          "named": true
         }
       ]
     }
@@ -297,7 +301,7 @@
           "named": true
         },
         {
-          "type": "statements",
+          "type": "statement",
           "named": true
         }
       ]
@@ -704,11 +708,15 @@
       "required": true,
       "types": [
         {
-          "type": "fn",
+          "type": "arrow",
           "named": true
         },
         {
-          "type": "function_return_type_decl_optional",
+          "type": "attribute_list",
+          "named": true
+        },
+        {
+          "type": "fn",
           "named": true
         },
         {
@@ -725,25 +733,6 @@
         },
         {
           "type": "paren_right",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "function_return_type_decl_optional",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "arrow",
-          "named": true
-        },
-        {
-          "type": "attribute_list",
           "named": true
         },
         {
@@ -936,7 +925,7 @@
           "named": true
         },
         {
-          "type": "statements",
+          "type": "statement",
           "named": true
         }
       ]
@@ -1385,21 +1374,6 @@
         },
         {
           "type": "variable_statement",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "statements",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "statement",
           "named": true
         }
       ]
@@ -2045,6 +2019,10 @@
       "required": true,
       "types": [
         {
+          "type": "ident",
+          "named": true
+        },
+        {
           "type": "var",
           "named": true
         },
@@ -2151,6 +2129,10 @@
         }
       ]
     }
+  },
+  {
+    "type": "//",
+    "named": false
   },
   {
     "type": "and",
@@ -2686,6 +2668,10 @@
   },
   {
     "type": "uint_literal",
+    "named": true
+  },
+  {
+    "type": "underscore",
     "named": true
   },
   {
