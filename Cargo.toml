@@ -1,7 +1,7 @@
 [package]
 name = "tree-sitter-wgsl"
 description = "wgsl grammar for the tree-sitter parsing library"
-version = "0.0.2"
+version = "0.0.3"
 authors = ["Mehmet Oguz Derin <mehmetoguzderin@mehmetoguzderin.com>"]
 keywords = ["incremental", "parsing", "wgsl"]
 categories = ["parsing", "text-editors"]
