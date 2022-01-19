@@ -28,6 +28,11 @@ bool tree_sitter_wgsl_external_scanner_scan(void *payload, TSLexer *lexer,
     for (;;) {
       switch (lexer->lookahead) {
         case '\0':
+          /* This signals the end of input. Since nesting depth is
+           * greater than zero, the scanner is in the middle of
+           * a block comment. Block comments must be affirmatively
+           * terminated.
+           */
           return false;
         case '*':
           advance(lexer);
