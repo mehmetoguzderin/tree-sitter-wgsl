@@ -1,17 +1,5 @@
 {
     "name": "tree-sitter-wgsl",
-    "author": "Mehmet Oguz Derin <mehmetoguzderin@mehmetoguzderin.com>",
-    "license": "CC0-1.0",
-    "version": "0.0.4",
-    "keywords": [
-        "incremental",
-        "parsing",
-        "wgsl"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/mehmetoguzderin/tree-sitter-wgsl.git"
-    },
     "dependencies": {
         "nan": "^2.15.0"
     },

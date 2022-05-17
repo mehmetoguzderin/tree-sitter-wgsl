@@ -32,6 +32,37 @@
     }
   },
   {
+    "type": "address_space",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "function",
+          "named": true
+        },
+        {
+          "type": "private",
+          "named": true
+        },
+        {
+          "type": "storage",
+          "named": true
+        },
+        {
+          "type": "uniform",
+          "named": true
+        },
+        {
+          "type": "workgroup",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "argument_expression_list",
     "named": true,
     "fields": {},
@@ -229,6 +260,91 @@
     }
   },
   {
+    "type": "bitwise_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "and",
+          "named": true
+        },
+        {
+          "type": "binary_and_expression",
+          "named": true
+        },
+        {
+          "type": "binary_or_expression",
+          "named": true
+        },
+        {
+          "type": "binary_xor_expression",
+          "named": true
+        },
+        {
+          "type": "or",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        },
+        {
+          "type": "xor",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bool_literal",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "false",
+          "named": true
+        },
+        {
+          "type": "true",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "break_if_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "break",
+          "named": true
+        },
+        {
+          "type": "expression",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "semicolon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "break_statement",
     "named": true,
     "fields": {},
@@ -244,7 +360,34 @@
     }
   },
   {
-    "type": "case_body",
+    "type": "callable",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "mat_prefix",
+          "named": true
+        },
+        {
+          "type": "type_decl_without_ident",
+          "named": true
+        },
+        {
+          "type": "vec_prefix",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "case_compound_statement",
     "named": true,
     "fields": {},
     "children": {
@@ -252,15 +395,15 @@
       "required": true,
       "types": [
         {
-          "type": "case_body",
+          "type": "brace_left",
           "named": true
         },
         {
-          "type": "fallthrough",
+          "type": "brace_right",
           "named": true
         },
         {
-          "type": "semicolon",
+          "type": "fallthrough_statement",
           "named": true
         },
         {
@@ -283,7 +426,7 @@
           "named": true
         },
         {
-          "type": "const_literal",
+          "type": "expression",
           "named": true
         }
       ]
@@ -322,14 +465,6 @@
           "named": true
         },
         {
-          "type": "shift_left_equal",
-          "named": true
-        },
-        {
-          "type": "shift_right_equal",
-          "named": true
-        },
-        {
           "type": "times_equal",
           "named": true
         },
@@ -364,41 +499,6 @@
     }
   },
   {
-    "type": "const_expression",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "comma",
-          "named": true
-        },
-        {
-          "type": "const_expression",
-          "named": true
-        },
-        {
-          "type": "const_literal",
-          "named": true
-        },
-        {
-          "type": "paren_left",
-          "named": true
-        },
-        {
-          "type": "paren_right",
-          "named": true
-        },
-        {
-          "type": "type_decl",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "const_literal",
     "named": true,
     "fields": {},
@@ -407,7 +507,7 @@
       "required": true,
       "types": [
         {
-          "type": "false",
+          "type": "bool_literal",
           "named": true
         },
         {
@@ -416,14 +516,6 @@
         },
         {
           "type": "int_literal",
-          "named": true
-        },
-        {
-          "type": "true",
-          "named": true
-        },
-        {
-          "type": "uint_literal",
           "named": true
         }
       ]
@@ -445,6 +537,33 @@
     }
   },
   {
+    "type": "continuing_compound_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "brace_left",
+          "named": true
+        },
+        {
+          "type": "brace_right",
+          "named": true
+        },
+        {
+          "type": "break_if_statement",
+          "named": true
+        },
+        {
+          "type": "statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "continuing_statement",
     "named": true,
     "fields": {},
@@ -453,11 +572,11 @@
       "required": true,
       "types": [
         {
-          "type": "compound_statement",
+          "type": "continuing",
           "named": true
         },
         {
-          "type": "continuing",
+          "type": "continuing_compound_statement",
           "named": true
         }
       ]
@@ -489,6 +608,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "decimal_float_literal",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "decrement_statement",
@@ -549,15 +673,11 @@
       "required": true,
       "types": [
         {
-          "type": "ident",
+          "type": "additive_expression",
           "named": true
         },
         {
-          "type": "int_literal",
-          "named": true
-        },
-        {
-          "type": "uint_literal",
+          "type": "bitwise_expression",
           "named": true
         }
       ]
@@ -614,27 +734,11 @@
       "required": true,
       "types": [
         {
-          "type": "and",
-          "named": true
-        },
-        {
           "type": "and_and",
           "named": true
         },
         {
-          "type": "binary_and_expression",
-          "named": true
-        },
-        {
-          "type": "binary_or_expression",
-          "named": true
-        },
-        {
-          "type": "binary_xor_expression",
-          "named": true
-        },
-        {
-          "type": "or",
+          "type": "bitwise_expression",
           "named": true
         },
         {
@@ -652,13 +756,24 @@
         {
           "type": "short_circuit_or_expression",
           "named": true
-        },
+        }
+      ]
+    }
+  },
+  {
+    "type": "fallthrough_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
         {
-          "type": "unary_expression",
+          "type": "fallthrough",
           "named": true
         },
         {
-          "type": "xor",
+          "type": "semicolon",
           "named": true
         }
       ]
@@ -723,7 +838,15 @@
           "named": true
         },
         {
+          "type": "decrement_statement",
+          "named": true
+        },
+        {
           "type": "func_call_statement",
+          "named": true
+        },
+        {
+          "type": "increment_statement",
           "named": true
         },
         {
@@ -877,29 +1000,6 @@
     }
   },
   {
-    "type": "global_const_initializer",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "const_expression",
-          "named": true
-        },
-        {
-          "type": "equal",
-          "named": true
-        },
-        {
-          "type": "ident",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "global_constant_decl",
     "named": true,
     "fields": {},
@@ -912,7 +1012,15 @@
           "named": true
         },
         {
-          "type": "global_const_initializer",
+          "type": "const",
+          "named": true
+        },
+        {
+          "type": "equal",
+          "named": true
+        },
+        {
+          "type": "expression",
           "named": true
         },
         {
@@ -920,7 +1028,7 @@
           "named": true
         },
         {
-          "type": "let",
+          "type": "override",
           "named": true
         },
         {
@@ -958,15 +1066,11 @@
           "named": true
         },
         {
-          "type": "const_expression",
-          "named": true
-        },
-        {
           "type": "equal",
           "named": true
         },
         {
-          "type": "ident",
+          "type": "expression",
           "named": true
         },
         {
@@ -975,6 +1079,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "hex_float_literal",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "if_statement",
@@ -997,11 +1106,11 @@
           "named": true
         },
         {
-          "type": "if",
+          "type": "expression",
           "named": true
         },
         {
-          "type": "paren_expression",
+          "type": "if",
           "named": true
         }
       ]
@@ -1025,6 +1134,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "int_literal",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "lhs_expression",
@@ -1072,10 +1186,6 @@
         {
           "type": "int_literal",
           "named": true
-        },
-        {
-          "type": "uint_literal",
-          "named": true
         }
       ]
     }
@@ -1106,6 +1216,53 @@
         },
         {
           "type": "statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mat_prefix",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "mat2x2",
+          "named": true
+        },
+        {
+          "type": "mat2x3",
+          "named": true
+        },
+        {
+          "type": "mat2x4",
+          "named": true
+        },
+        {
+          "type": "mat3x2",
+          "named": true
+        },
+        {
+          "type": "mat3x3",
+          "named": true
+        },
+        {
+          "type": "mat3x4",
+          "named": true
+        },
+        {
+          "type": "mat4x2",
+          "named": true
+        },
+        {
+          "type": "mat4x3",
+          "named": true
+        },
+        {
+          "type": "mat4x4",
           "named": true
         }
       ]
@@ -1270,6 +1427,10 @@
           "named": true
         },
         {
+          "type": "callable",
+          "named": true
+        },
+        {
           "type": "const_literal",
           "named": true
         },
@@ -1305,6 +1466,10 @@
       "required": true,
       "types": [
         {
+          "type": "additive_expression",
+          "named": true
+        },
+        {
           "type": "equal_equal",
           "named": true
         },
@@ -1326,10 +1491,6 @@
         },
         {
           "type": "not_equal",
-          "named": true
-        },
-        {
-          "type": "shift_expression",
           "named": true
         }
       ]
@@ -1403,33 +1564,6 @@
         },
         {
           "type": "sampler_comparison",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "shift_expression",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "additive_expression",
-          "named": true
-        },
-        {
-          "type": "shift_left",
-          "named": true
-        },
-        {
-          "type": "shift_right",
-          "named": true
-        },
-        {
-          "type": "unary_expression",
           "named": true
         }
       ]
@@ -1561,42 +1695,38 @@
           "named": true
         },
         {
+          "type": "static_assert_statement",
+          "named": true
+        },
+        {
           "type": "switch_statement",
           "named": true
         },
         {
           "type": "variable_statement",
           "named": true
+        },
+        {
+          "type": "while_statement",
+          "named": true
         }
       ]
     }
   },
   {
-    "type": "storage_class",
+    "type": "static_assert_statement",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
-          "type": "function",
+          "type": "expression",
           "named": true
         },
         {
-          "type": "private",
-          "named": true
-        },
-        {
-          "type": "storage",
-          "named": true
-        },
-        {
-          "type": "uniform",
-          "named": true
-        },
-        {
-          "type": "workgroup",
+          "type": "staticAssert",
           "named": true
         }
       ]
@@ -1646,6 +1776,10 @@
           "named": true
         },
         {
+          "type": "comma",
+          "named": true
+        },
+        {
           "type": "struct_member",
           "named": true
         }
@@ -1688,10 +1822,6 @@
           "named": true
         },
         {
-          "type": "semicolon",
-          "named": true
-        },
-        {
           "type": "variable_ident_decl",
           "named": true
         }
@@ -1707,19 +1837,11 @@
       "required": true,
       "types": [
         {
-          "type": "brace_left",
-          "named": true
-        },
-        {
-          "type": "brace_right",
-          "named": true
-        },
-        {
           "type": "case",
           "named": true
         },
         {
-          "type": "case_body",
+          "type": "case_compound_statement",
           "named": true
         },
         {
@@ -1754,7 +1876,7 @@
           "named": true
         },
         {
-          "type": "paren_expression",
+          "type": "expression",
           "named": true
         },
         {
@@ -1857,6 +1979,10 @@
           "named": true
         },
         {
+          "type": "static_assert_statement",
+          "named": true
+        },
+        {
           "type": "struct_decl",
           "named": true
         },
@@ -1899,11 +2025,34 @@
     "named": true,
     "fields": {},
     "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "type_decl_without_ident",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "type_decl_without_ident",
+    "named": true,
+    "fields": {},
+    "children": {
       "multiple": true,
       "required": true,
       "types": [
         {
           "type": "access_mode",
+          "named": true
+        },
+        {
+          "type": "address_space",
           "named": true
         },
         {
@@ -1923,15 +2072,15 @@
           "named": true
         },
         {
+          "type": "float16",
+          "named": true
+        },
+        {
           "type": "float32",
           "named": true
         },
         {
           "type": "greater_than",
-          "named": true
-        },
-        {
-          "type": "ident",
           "named": true
         },
         {
@@ -1943,47 +2092,11 @@
           "named": true
         },
         {
-          "type": "mat2x2",
-          "named": true
-        },
-        {
-          "type": "mat2x3",
-          "named": true
-        },
-        {
-          "type": "mat2x4",
-          "named": true
-        },
-        {
-          "type": "mat3x2",
-          "named": true
-        },
-        {
-          "type": "mat3x3",
-          "named": true
-        },
-        {
-          "type": "mat3x4",
-          "named": true
-        },
-        {
-          "type": "mat4x2",
-          "named": true
-        },
-        {
-          "type": "mat4x3",
-          "named": true
-        },
-        {
-          "type": "mat4x4",
+          "type": "mat_prefix",
           "named": true
         },
         {
           "type": "pointer",
-          "named": true
-        },
-        {
-          "type": "storage_class",
           "named": true
         },
         {
@@ -1999,15 +2112,7 @@
           "named": true
         },
         {
-          "type": "vec2",
-          "named": true
-        },
-        {
-          "type": "vec3",
-          "named": true
-        },
-        {
-          "type": "vec4",
+          "type": "vec_prefix",
           "named": true
         }
       ]
@@ -2115,6 +2220,10 @@
           "named": true
         },
         {
+          "type": "address_space",
+          "named": true
+        },
+        {
           "type": "comma",
           "named": true
         },
@@ -2124,10 +2233,6 @@
         },
         {
           "type": "less_than",
-          "named": true
-        },
-        {
-          "type": "storage_class",
           "named": true
         }
       ]
@@ -2141,6 +2246,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "const",
+          "named": true
+        },
         {
           "type": "equal",
           "named": true
@@ -2169,7 +2278,241 @@
     }
   },
   {
+    "type": "vec_prefix",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "vec2",
+          "named": true
+        },
+        {
+          "type": "vec3",
+          "named": true
+        },
+        {
+          "type": "vec4",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "while_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "compound_statement",
+          "named": true
+        },
+        {
+          "type": "expression",
+          "named": true
+        },
+        {
+          "type": "while",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "//",
+    "named": false
+  },
+  {
+    "type": "AppendStructuredBuffer",
+    "named": false
+  },
+  {
+    "type": "BlendState",
+    "named": false
+  },
+  {
+    "type": "Buffer",
+    "named": false
+  },
+  {
+    "type": "ByteAddressBuffer",
+    "named": false
+  },
+  {
+    "type": "CompileShader",
+    "named": false
+  },
+  {
+    "type": "ComputeShader",
+    "named": false
+  },
+  {
+    "type": "ConsumeStructuredBuffer",
+    "named": false
+  },
+  {
+    "type": "DepthStencilState",
+    "named": false
+  },
+  {
+    "type": "DepthStencilView",
+    "named": false
+  },
+  {
+    "type": "DomainShader",
+    "named": false
+  },
+  {
+    "type": "GeometryShader",
+    "named": false
+  },
+  {
+    "type": "Hullshader",
+    "named": false
+  },
+  {
+    "type": "InputPatch",
+    "named": false
+  },
+  {
+    "type": "LineStream",
+    "named": false
+  },
+  {
+    "type": "NULL",
+    "named": false
+  },
+  {
+    "type": "OutputPatch",
+    "named": false
+  },
+  {
+    "type": "PixelShader",
+    "named": false
+  },
+  {
+    "type": "PointStream",
+    "named": false
+  },
+  {
+    "type": "RWBuffer",
+    "named": false
+  },
+  {
+    "type": "RWByteAddressBuffer",
+    "named": false
+  },
+  {
+    "type": "RWStructuredBuffer",
+    "named": false
+  },
+  {
+    "type": "RWTexture1D",
+    "named": false
+  },
+  {
+    "type": "RWTexture1DArray",
+    "named": false
+  },
+  {
+    "type": "RWTexture2D",
+    "named": false
+  },
+  {
+    "type": "RWTexture2DArray",
+    "named": false
+  },
+  {
+    "type": "RWTexture3D",
+    "named": false
+  },
+  {
+    "type": "RasterizerState",
+    "named": false
+  },
+  {
+    "type": "RenderTargetView",
+    "named": false
+  },
+  {
+    "type": "SamplerComparisonState",
+    "named": false
+  },
+  {
+    "type": "SamplerState",
+    "named": false
+  },
+  {
+    "type": "Self",
+    "named": false
+  },
+  {
+    "type": "StructuredBuffer",
+    "named": false
+  },
+  {
+    "type": "Texture1D",
+    "named": false
+  },
+  {
+    "type": "Texture1DArray",
+    "named": false
+  },
+  {
+    "type": "Texture2D",
+    "named": false
+  },
+  {
+    "type": "Texture2DArray",
+    "named": false
+  },
+  {
+    "type": "Texture2DMS",
+    "named": false
+  },
+  {
+    "type": "Texture2DMSArray",
+    "named": false
+  },
+  {
+    "type": "Texture3D",
+    "named": false
+  },
+  {
+    "type": "TextureCube",
+    "named": false
+  },
+  {
+    "type": "TextureCubeArray",
+    "named": false
+  },
+  {
+    "type": "TriangleStream",
+    "named": false
+  },
+  {
+    "type": "VertexShader",
+    "named": false
+  },
+  {
+    "type": "abstract",
+    "named": false
+  },
+  {
+    "type": "active",
+    "named": false
+  },
+  {
+    "type": "alignas",
+    "named": false
+  },
+  {
+    "type": "alignof",
     "named": false
   },
   {
@@ -2193,7 +2536,19 @@
     "named": true
   },
   {
+    "type": "as",
+    "named": false
+  },
+  {
     "type": "asm",
+    "named": false
+  },
+  {
+    "type": "asm_fragment",
+    "named": false
+  },
+  {
+    "type": "async",
     "named": false
   },
   {
@@ -2201,15 +2556,39 @@
     "named": true
   },
   {
+    "type": "atomic_uint",
+    "named": false
+  },
+  {
     "type": "attr",
     "named": true
+  },
+  {
+    "type": "attribute",
+    "named": false
+  },
+  {
+    "type": "auto",
+    "named": false
+  },
+  {
+    "type": "await",
+    "named": false
   },
   {
     "type": "bang",
     "named": true
   },
   {
+    "type": "become",
+    "named": false
+  },
+  {
     "type": "bf16",
+    "named": false
+  },
+  {
+    "type": "binding_array",
     "named": false
   },
   {
@@ -2245,15 +2624,91 @@
     "named": true
   },
   {
+    "type": "cast",
+    "named": false
+  },
+  {
+    "type": "catch",
+    "named": false
+  },
+  {
+    "type": "cbuffer",
+    "named": false
+  },
+  {
+    "type": "centroid",
+    "named": false
+  },
+  {
+    "type": "char",
+    "named": false
+  },
+  {
+    "type": "class",
+    "named": false
+  },
+  {
+    "type": "co_await",
+    "named": false
+  },
+  {
+    "type": "co_return",
+    "named": false
+  },
+  {
+    "type": "co_yield",
+    "named": false
+  },
+  {
+    "type": "coherent",
+    "named": false
+  },
+  {
     "type": "colon",
     "named": true
+  },
+  {
+    "type": "column_major",
+    "named": false
   },
   {
     "type": "comma",
     "named": true
   },
   {
+    "type": "common",
+    "named": false
+  },
+  {
+    "type": "compile",
+    "named": false
+  },
+  {
+    "type": "compile_fragment",
+    "named": false
+  },
+  {
+    "type": "concept",
+    "named": false
+  },
+  {
     "type": "const",
+    "named": true
+  },
+  {
+    "type": "const_cast",
+    "named": false
+  },
+  {
+    "type": "consteval",
+    "named": false
+  },
+  {
+    "type": "constexpr",
+    "named": false
+  },
+  {
+    "type": "constinit",
     "named": false
   },
   {
@@ -2265,12 +2720,32 @@
     "named": true
   },
   {
-    "type": "decimal_float_literal",
-    "named": true
+    "type": "crate",
+    "named": false
+  },
+  {
+    "type": "debugger",
+    "named": false
+  },
+  {
+    "type": "decltype",
+    "named": false
   },
   {
     "type": "default",
     "named": true
+  },
+  {
+    "type": "delete",
+    "named": false
+  },
+  {
+    "type": "demote",
+    "named": false
+  },
+  {
+    "type": "demote_to_helper",
+    "named": false
   },
   {
     "type": "discard",
@@ -2282,6 +2757,14 @@
   },
   {
     "type": "do",
+    "named": false
+  },
+  {
+    "type": "dword",
+    "named": false
+  },
+  {
+    "type": "dynamic_cast",
     "named": false
   },
   {
@@ -2305,7 +2788,23 @@
     "named": true
   },
   {
-    "type": "f16",
+    "type": "explicit",
+    "named": false
+  },
+  {
+    "type": "export",
+    "named": false
+  },
+  {
+    "type": "extends",
+    "named": false
+  },
+  {
+    "type": "extern",
+    "named": false
+  },
+  {
+    "type": "external",
     "named": false
   },
   {
@@ -2318,6 +2817,30 @@
   },
   {
     "type": "false",
+    "named": true
+  },
+  {
+    "type": "filter",
+    "named": false
+  },
+  {
+    "type": "final",
+    "named": false
+  },
+  {
+    "type": "finally",
+    "named": false
+  },
+  {
+    "type": "fixed",
+    "named": false
+  },
+  {
+    "type": "flat",
+    "named": false
+  },
+  {
+    "type": "float16",
     "named": true
   },
   {
@@ -2337,8 +2860,40 @@
     "named": true
   },
   {
+    "type": "friend",
+    "named": false
+  },
+  {
+    "type": "from",
+    "named": false
+  },
+  {
     "type": "function",
     "named": true
+  },
+  {
+    "type": "fvec2",
+    "named": false
+  },
+  {
+    "type": "fvec3",
+    "named": false
+  },
+  {
+    "type": "fvec4",
+    "named": false
+  },
+  {
+    "type": "fxgroup",
+    "named": false
+  },
+  {
+    "type": "get",
+    "named": false
+  },
+  {
+    "type": "goto",
+    "named": false
   },
   {
     "type": "greater_than",
@@ -2349,12 +2904,28 @@
     "named": true
   },
   {
+    "type": "groupshared",
+    "named": false
+  },
+  {
     "type": "handle",
     "named": false
   },
   {
-    "type": "hex_float_literal",
-    "named": true
+    "type": "highp",
+    "named": false
+  },
+  {
+    "type": "hvec2",
+    "named": false
+  },
+  {
+    "type": "hvec3",
+    "named": false
+  },
+  {
+    "type": "hvec4",
+    "named": false
   },
   {
     "type": "i16",
@@ -2377,12 +2948,228 @@
     "named": true
   },
   {
+    "type": "iimage1D",
+    "named": false
+  },
+  {
+    "type": "iimage1DArray",
+    "named": false
+  },
+  {
+    "type": "iimage2D",
+    "named": false
+  },
+  {
+    "type": "iimage2DArray",
+    "named": false
+  },
+  {
+    "type": "iimage2DMS",
+    "named": false
+  },
+  {
+    "type": "iimage2DMSArray",
+    "named": false
+  },
+  {
+    "type": "iimage2DRect",
+    "named": false
+  },
+  {
+    "type": "iimage3D",
+    "named": false
+  },
+  {
+    "type": "iimageBuffer",
+    "named": false
+  },
+  {
+    "type": "iimageCube",
+    "named": false
+  },
+  {
+    "type": "iimageCubeArray",
+    "named": false
+  },
+  {
+    "type": "image1D",
+    "named": false
+  },
+  {
+    "type": "image1DArray",
+    "named": false
+  },
+  {
+    "type": "image2D",
+    "named": false
+  },
+  {
+    "type": "image2DArray",
+    "named": false
+  },
+  {
+    "type": "image2DMS",
+    "named": false
+  },
+  {
+    "type": "image2DMSArray",
+    "named": false
+  },
+  {
+    "type": "image2DRect",
+    "named": false
+  },
+  {
+    "type": "image3D",
+    "named": false
+  },
+  {
+    "type": "imageBuffer",
+    "named": false
+  },
+  {
+    "type": "imageCube",
+    "named": false
+  },
+  {
+    "type": "imageCubeArray",
+    "named": false
+  },
+  {
+    "type": "impl",
+    "named": false
+  },
+  {
+    "type": "implements",
+    "named": false
+  },
+  {
+    "type": "import",
+    "named": false
+  },
+  {
+    "type": "inline",
+    "named": false
+  },
+  {
+    "type": "inout",
+    "named": false
+  },
+  {
+    "type": "instanceof",
+    "named": false
+  },
+  {
     "type": "int32",
     "named": true
   },
   {
-    "type": "int_literal",
-    "named": true
+    "type": "interface",
+    "named": false
+  },
+  {
+    "type": "invariant",
+    "named": false
+  },
+  {
+    "type": "isampler1D",
+    "named": false
+  },
+  {
+    "type": "isampler1DArray",
+    "named": false
+  },
+  {
+    "type": "isampler2D",
+    "named": false
+  },
+  {
+    "type": "isampler2DArray",
+    "named": false
+  },
+  {
+    "type": "isampler2DMS",
+    "named": false
+  },
+  {
+    "type": "isampler2DMSArray",
+    "named": false
+  },
+  {
+    "type": "isampler2DRect",
+    "named": false
+  },
+  {
+    "type": "isampler3D",
+    "named": false
+  },
+  {
+    "type": "isamplerBuffer",
+    "named": false
+  },
+  {
+    "type": "isamplerCube",
+    "named": false
+  },
+  {
+    "type": "isamplerCubeArray",
+    "named": false
+  },
+  {
+    "type": "isubpassInput",
+    "named": false
+  },
+  {
+    "type": "isubpassInputMS",
+    "named": false
+  },
+  {
+    "type": "itexture1D",
+    "named": false
+  },
+  {
+    "type": "itexture1DArray",
+    "named": false
+  },
+  {
+    "type": "itexture2D",
+    "named": false
+  },
+  {
+    "type": "itexture2DArray",
+    "named": false
+  },
+  {
+    "type": "itexture2DMS",
+    "named": false
+  },
+  {
+    "type": "itexture2DMSArray",
+    "named": false
+  },
+  {
+    "type": "itexture2DRect",
+    "named": false
+  },
+  {
+    "type": "itexture3D",
+    "named": false
+  },
+  {
+    "type": "itextureBuffer",
+    "named": false
+  },
+  {
+    "type": "itextureCube",
+    "named": false
+  },
+  {
+    "type": "itextureCubeArray",
+    "named": false
+  },
+  {
+    "type": "layout",
+    "named": false
   },
   {
     "type": "less_than",
@@ -2397,8 +3184,32 @@
     "named": true
   },
   {
+    "type": "line",
+    "named": false
+  },
+  {
+    "type": "lineadj",
+    "named": false
+  },
+  {
+    "type": "linear",
+    "named": false
+  },
+  {
     "type": "loop",
     "named": true
+  },
+  {
+    "type": "lowp",
+    "named": false
+  },
+  {
+    "type": "macro",
+    "named": false
+  },
+  {
+    "type": "macro_rules",
+    "named": false
   },
   {
     "type": "mat",
@@ -2441,6 +3252,22 @@
     "named": true
   },
   {
+    "type": "match",
+    "named": false
+  },
+  {
+    "type": "matrix",
+    "named": false
+  },
+  {
+    "type": "mediump",
+    "named": false
+  },
+  {
+    "type": "meta",
+    "named": false
+  },
+  {
     "type": "minus",
     "named": true
   },
@@ -2453,6 +3280,14 @@
     "named": true
   },
   {
+    "type": "mod",
+    "named": false
+  },
+  {
+    "type": "module",
+    "named": false
+  },
+  {
     "type": "modulo",
     "named": true
   },
@@ -2461,8 +3296,64 @@
     "named": true
   },
   {
+    "type": "move",
+    "named": false
+  },
+  {
+    "type": "mut",
+    "named": false
+  },
+  {
+    "type": "mutable",
+    "named": false
+  },
+  {
+    "type": "namespace",
+    "named": false
+  },
+  {
+    "type": "new",
+    "named": false
+  },
+  {
+    "type": "nil",
+    "named": false
+  },
+  {
+    "type": "noexcept",
+    "named": false
+  },
+  {
+    "type": "noinline",
+    "named": false
+  },
+  {
+    "type": "nointerpolation",
+    "named": false
+  },
+  {
+    "type": "noperspective",
+    "named": false
+  },
+  {
     "type": "not_equal",
     "named": true
+  },
+  {
+    "type": "null",
+    "named": false
+  },
+  {
+    "type": "nullptr",
+    "named": false
+  },
+  {
+    "type": "of",
+    "named": false
+  },
+  {
+    "type": "operator",
+    "named": false
   },
   {
     "type": "or",
@@ -2477,6 +3368,18 @@
     "named": true
   },
   {
+    "type": "override",
+    "named": true
+  },
+  {
+    "type": "package",
+    "named": false
+  },
+  {
+    "type": "packoffset",
+    "named": false
+  },
+  {
     "type": "paren_left",
     "named": true
   },
@@ -2485,8 +3388,24 @@
     "named": true
   },
   {
+    "type": "partition",
+    "named": false
+  },
+  {
+    "type": "pass",
+    "named": false
+  },
+  {
+    "type": "patch",
+    "named": false
+  },
+  {
     "type": "period",
     "named": true
+  },
+  {
+    "type": "pixelfragment",
+    "named": false
   },
   {
     "type": "plus",
@@ -2501,16 +3420,44 @@
     "named": true
   },
   {
+    "type": "point",
+    "named": false
+  },
+  {
     "type": "pointer",
     "named": true
+  },
+  {
+    "type": "precise",
+    "named": false
+  },
+  {
+    "type": "precision",
+    "named": false
   },
   {
     "type": "premerge",
     "named": false
   },
   {
+    "type": "priv",
+    "named": false
+  },
+  {
     "type": "private",
     "named": true
+  },
+  {
+    "type": "protected",
+    "named": false
+  },
+  {
+    "type": "pub",
+    "named": false
+  },
+  {
+    "type": "public",
+    "named": false
   },
   {
     "type": "r32float",
@@ -2533,7 +3480,35 @@
     "named": false
   },
   {
+    "type": "readonly",
+    "named": false
+  },
+  {
+    "type": "ref",
+    "named": false
+  },
+  {
     "type": "regardless",
+    "named": false
+  },
+  {
+    "type": "register",
+    "named": false
+  },
+  {
+    "type": "reinterpret_cast",
+    "named": false
+  },
+  {
+    "type": "requires",
+    "named": false
+  },
+  {
+    "type": "resource",
+    "named": false
+  },
+  {
+    "type": "restrict",
     "named": false
   },
   {
@@ -2593,48 +3568,272 @@
     "named": false
   },
   {
+    "type": "row_major",
+    "named": false
+  },
+  {
+    "type": "samper",
+    "named": false
+  },
+  {
+    "type": "sample",
+    "named": false
+  },
+  {
     "type": "sampler",
     "named": true
+  },
+  {
+    "type": "sampler1D",
+    "named": false
+  },
+  {
+    "type": "sampler1DArray",
+    "named": false
+  },
+  {
+    "type": "sampler1DArrayShadow",
+    "named": false
+  },
+  {
+    "type": "sampler1DShadow",
+    "named": false
+  },
+  {
+    "type": "sampler2D",
+    "named": false
+  },
+  {
+    "type": "sampler2DArray",
+    "named": false
+  },
+  {
+    "type": "sampler2DArrayShadow",
+    "named": false
+  },
+  {
+    "type": "sampler2DMS",
+    "named": false
+  },
+  {
+    "type": "sampler2DMSArray",
+    "named": false
+  },
+  {
+    "type": "sampler2DRect",
+    "named": false
+  },
+  {
+    "type": "sampler2DRectShadow",
+    "named": false
+  },
+  {
+    "type": "sampler2DShadow",
+    "named": false
+  },
+  {
+    "type": "sampler3D",
+    "named": false
+  },
+  {
+    "type": "sampler3DRect",
+    "named": false
+  },
+  {
+    "type": "samplerBuffer",
+    "named": false
+  },
+  {
+    "type": "samplerCube",
+    "named": false
+  },
+  {
+    "type": "samplerCubeArray",
+    "named": false
+  },
+  {
+    "type": "samplerCubeArrayShadow",
+    "named": false
+  },
+  {
+    "type": "samplerCubeShadow",
+    "named": false
+  },
+  {
+    "type": "samplerShadow",
+    "named": false
   },
   {
     "type": "sampler_comparison",
     "named": true
   },
   {
+    "type": "self",
+    "named": false
+  },
+  {
     "type": "semicolon",
     "named": true
   },
   {
-    "type": "shift_left",
-    "named": true
+    "type": "set",
+    "named": false
   },
   {
-    "type": "shift_left_equal",
-    "named": true
+    "type": "shared",
+    "named": false
   },
   {
-    "type": "shift_right",
-    "named": true
+    "type": "signed",
+    "named": false
   },
   {
-    "type": "shift_right_equal",
-    "named": true
+    "type": "sizeof",
+    "named": false
+  },
+  {
+    "type": "smooth",
+    "named": false
+  },
+  {
+    "type": "snorm",
+    "named": false
   },
   {
     "type": "star",
     "named": true
   },
   {
+    "type": "stateblock",
+    "named": false
+  },
+  {
+    "type": "stateblock_state",
+    "named": false
+  },
+  {
+    "type": "static",
+    "named": false
+  },
+  {
+    "type": "staticAssert",
+    "named": true
+  },
+  {
+    "type": "static_assert",
+    "named": false
+  },
+  {
+    "type": "static_cast",
+    "named": false
+  },
+  {
+    "type": "std",
+    "named": false
+  },
+  {
     "type": "storage",
     "named": true
+  },
+  {
+    "type": "string",
+    "named": false
   },
   {
     "type": "struct",
     "named": true
   },
   {
+    "type": "subpassInput",
+    "named": false
+  },
+  {
+    "type": "subpassInputMS",
+    "named": false
+  },
+  {
+    "type": "subroutine",
+    "named": false
+  },
+  {
+    "type": "super",
+    "named": false
+  },
+  {
+    "type": "superp",
+    "named": false
+  },
+  {
     "type": "switch",
     "named": true
+  },
+  {
+    "type": "target",
+    "named": false
+  },
+  {
+    "type": "tbuffer",
+    "named": false
+  },
+  {
+    "type": "technique",
+    "named": false
+  },
+  {
+    "type": "technique10",
+    "named": false
+  },
+  {
+    "type": "technique11",
+    "named": false
+  },
+  {
+    "type": "template",
+    "named": false
+  },
+  {
+    "type": "texture1D",
+    "named": false
+  },
+  {
+    "type": "texture1DArray",
+    "named": false
+  },
+  {
+    "type": "texture2D",
+    "named": false
+  },
+  {
+    "type": "texture2DArray",
+    "named": false
+  },
+  {
+    "type": "texture2DMS",
+    "named": false
+  },
+  {
+    "type": "texture2DMSArray",
+    "named": false
+  },
+  {
+    "type": "texture2DRect",
+    "named": false
+  },
+  {
+    "type": "texture3D",
+    "named": false
+  },
+  {
+    "type": "textureBuffer",
+    "named": false
+  },
+  {
+    "type": "textureCube",
+    "named": false
+  },
+  {
+    "type": "textureCubeArray",
+    "named": false
   },
   {
     "type": "texture_1d",
@@ -2701,6 +3900,18 @@
     "named": true
   },
   {
+    "type": "this",
+    "named": false
+  },
+  {
+    "type": "thread_local",
+    "named": false
+  },
+  {
+    "type": "throw",
+    "named": false
+  },
+  {
     "type": "tilde",
     "named": true
   },
@@ -2709,8 +3920,24 @@
     "named": true
   },
   {
+    "type": "trait",
+    "named": false
+  },
+  {
+    "type": "triangle",
+    "named": false
+  },
+  {
+    "type": "triangleadj",
+    "named": false
+  },
+  {
     "type": "true",
     "named": true
+  },
+  {
+    "type": "try",
+    "named": false
   },
   {
     "type": "type",
@@ -2718,6 +3945,18 @@
   },
   {
     "type": "typedef",
+    "named": false
+  },
+  {
+    "type": "typeid",
+    "named": false
+  },
+  {
+    "type": "typename",
+    "named": false
+  },
+  {
+    "type": "typeof",
     "named": false
   },
   {
@@ -2733,11 +3972,51 @@
     "named": false
   },
   {
-    "type": "uint32",
-    "named": true
+    "type": "uimage1D",
+    "named": false
   },
   {
-    "type": "uint_literal",
+    "type": "uimage1DArray",
+    "named": false
+  },
+  {
+    "type": "uimage2D",
+    "named": false
+  },
+  {
+    "type": "uimage2DArray",
+    "named": false
+  },
+  {
+    "type": "uimage2DMS",
+    "named": false
+  },
+  {
+    "type": "uimage2DMSArray",
+    "named": false
+  },
+  {
+    "type": "uimage2DRect",
+    "named": false
+  },
+  {
+    "type": "uimage3D",
+    "named": false
+  },
+  {
+    "type": "uimageBuffer",
+    "named": false
+  },
+  {
+    "type": "uimageCube",
+    "named": false
+  },
+  {
+    "type": "uimageCubeArray",
+    "named": false
+  },
+  {
+    "type": "uint32",
     "named": true
   },
   {
@@ -2749,7 +4028,75 @@
     "named": true
   },
   {
+    "type": "union",
+    "named": false
+  },
+  {
     "type": "unless",
+    "named": false
+  },
+  {
+    "type": "unorm",
+    "named": false
+  },
+  {
+    "type": "unsafe",
+    "named": false
+  },
+  {
+    "type": "unsigned",
+    "named": false
+  },
+  {
+    "type": "unsized",
+    "named": false
+  },
+  {
+    "type": "usampler1D",
+    "named": false
+  },
+  {
+    "type": "usampler1DArray",
+    "named": false
+  },
+  {
+    "type": "usampler2D",
+    "named": false
+  },
+  {
+    "type": "usampler2DArray",
+    "named": false
+  },
+  {
+    "type": "usampler2DMS",
+    "named": false
+  },
+  {
+    "type": "usampler2DMSArray",
+    "named": false
+  },
+  {
+    "type": "usampler2DRect",
+    "named": false
+  },
+  {
+    "type": "usampler3D",
+    "named": false
+  },
+  {
+    "type": "usamplerBuffer",
+    "named": false
+  },
+  {
+    "type": "usamplerCube",
+    "named": false
+  },
+  {
+    "type": "usamplerCubeArray",
+    "named": false
+  },
+  {
+    "type": "use",
     "named": false
   },
   {
@@ -2757,8 +4104,64 @@
     "named": false
   },
   {
+    "type": "usubpassInput",
+    "named": false
+  },
+  {
+    "type": "usubpassInputMS",
+    "named": false
+  },
+  {
+    "type": "utexture1D",
+    "named": false
+  },
+  {
+    "type": "utexture1DArray",
+    "named": false
+  },
+  {
+    "type": "utexture2D",
+    "named": false
+  },
+  {
+    "type": "utexture2DArray",
+    "named": false
+  },
+  {
+    "type": "utexture2DMS",
+    "named": false
+  },
+  {
+    "type": "utexture2DMSArray",
+    "named": false
+  },
+  {
+    "type": "utexture2DRect",
+    "named": false
+  },
+  {
+    "type": "utexture3D",
+    "named": false
+  },
+  {
+    "type": "utextureBuffer",
+    "named": false
+  },
+  {
+    "type": "utextureCube",
+    "named": false
+  },
+  {
+    "type": "utextureCubeArray",
+    "named": false
+  },
+  {
     "type": "var",
     "named": true
+  },
+  {
+    "type": "varying",
+    "named": false
   },
   {
     "type": "vec",
@@ -2777,11 +4180,43 @@
     "named": true
   },
   {
+    "type": "vector",
+    "named": false
+  },
+  {
+    "type": "vertexfragment",
+    "named": false
+  },
+  {
+    "type": "virtual",
+    "named": false
+  },
+  {
     "type": "void",
     "named": false
   },
   {
+    "type": "volatile",
+    "named": false
+  },
+  {
+    "type": "wchar_t",
+    "named": false
+  },
+  {
+    "type": "wgsl",
+    "named": false
+  },
+  {
+    "type": "where",
+    "named": false
+  },
+  {
     "type": "while",
+    "named": true
+  },
+  {
+    "type": "with",
     "named": false
   },
   {
@@ -2793,11 +4228,19 @@
     "named": false
   },
   {
+    "type": "writeonly",
+    "named": false
+  },
+  {
     "type": "xor",
     "named": true
   },
   {
     "type": "xor_equal",
     "named": true
+  },
+  {
+    "type": "yield",
+    "named": false
   }
 ]
