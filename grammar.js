@@ -60,16 +60,16 @@ module.exports = grammar({
             $.hex_float_literal
         ),
         decimal_float_literal: $ => choice(
-            token(/[0-9]*\.[0-9]+([eE](\+|-)?[0-9]+)?[fh]?/),
-            token(/[0-9]+\.[0-9]*([eE](\+|-)?[0-9]+)?[fh]?/),
-            token(/[0-9]+[eE](\+|-)?[0-9]+[fh]?/),
+            token(/[0-9]*\.[0-9]+([eE][+-]?[0-9]+)?[fh]?/),
+            token(/[0-9]+\.[0-9]*([eE][+-]?[0-9]+)?[fh]?/),
+            token(/[0-9]+[eE][+-]?[0-9]+[fh]?/),
             token(/0[fh]/),
             token(/[1-9][0-9]*[fh]/)
         ),
         hex_float_literal: $ => choice(
-            token(/0[xX][0-9a-fA-F]*\.[0-9a-fA-F]+([pP](\+|-)?[0-9]+[fh]?)?/),
-            token(/0[xX][0-9a-fA-F]+\.[0-9a-fA-F]*([pP](\+|-)?[0-9]+[fh]?)?/),
-            token(/0[xX][0-9a-fA-F]+[pP](\+|-)?[0-9]+[fh]?/)
+            token(/0[xX][0-9a-fA-F]*\.[0-9a-fA-F]+([pP][+-]?[0-9]+[fh]?)?/),
+            token(/0[xX][0-9a-fA-F]+\.[0-9a-fA-F]*([pP][+-]?[0-9]+[fh]?)?/),
+            token(/0[xX][0-9a-fA-F]+[pP][+-]?[0-9]+[fh]?/)
         ),
         const_literal: $ => choice(
             $.int_literal,
@@ -225,14 +225,19 @@ module.exports = grammar({
             seq($.additive_expression, $.plus, $.multiplicative_expression),
             seq($.additive_expression, $.minus, $.multiplicative_expression)
         ),
-        relational_expression: $ => choice(
+        shift_expression: $ => choice(
             $.additive_expression,
-            seq($.additive_expression, $.less_than, $.additive_expression),
-            seq($.additive_expression, $.greater_than, $.additive_expression),
-            seq($.additive_expression, $.less_than_equal, $.additive_expression),
-            seq($.additive_expression, $.greater_than_equal, $.additive_expression),
-            seq($.additive_expression, $.equal_equal, $.additive_expression),
-            seq($.additive_expression, $.not_equal, $.additive_expression)
+            seq($.unary_expression, $.shift_left, $.unary_expression),
+            seq($.unary_expression, $.shift_right, $.unary_expression)
+        ),
+        relational_expression: $ => choice(
+            $.shift_expression,
+            seq($.shift_expression, $.less_than, $.shift_expression),
+            seq($.shift_expression, $.greater_than, $.shift_expression),
+            seq($.shift_expression, $.less_than_equal, $.shift_expression),
+            seq($.shift_expression, $.greater_than_equal, $.shift_expression),
+            seq($.shift_expression, $.equal_equal, $.shift_expression),
+            seq($.shift_expression, $.not_equal, $.shift_expression)
         ),
         short_circuit_and_expression: $ => choice(
             $.relational_expression,
@@ -278,7 +283,9 @@ module.exports = grammar({
             $.modulo_equal,
             $.and_equal,
             $.or_equal,
-            $.xor_equal
+            $.xor_equal,
+            $.shift_right_equal,
+            $.shift_left_equal
         ),
         increment_statement: $ => seq($.lhs_expression, $.plus_plus),
         decrement_statement: $ => seq($.lhs_expression, $.minus_minus),
@@ -453,8 +460,10 @@ module.exports = grammar({
         not_equal: $ => token('!='),
         greater_than: $ => token('>'),
         greater_than_equal: $ => token('>='),
+        shift_right: $ => token('>>'),
         less_than: $ => token('<'),
         less_than_equal: $ => token('<='),
+        shift_left: $ => token('<<'),
         modulo: $ => token('%'),
         minus: $ => token('-'),
         minus_minus: $ => token('--'),
@@ -478,6 +487,8 @@ module.exports = grammar({
         and_equal: $ => token('&='),
         or_equal: $ => token('|='),
         xor_equal: $ => token('^='),
+        shift_right_equal: $ => token('>>='),
+        shift_left_equal: $ => token('<<='),
         _reserved: $ => choice(
             token('AppendStructuredBuffer'),
             token('BlendState'),
@@ -540,7 +551,6 @@ module.exports = grammar({
             token('cast'),
             token('catch'),
             token('cbuffer'),
-            token('centroid'),
             token('char'),
             token('class'),
             token('co_await'),
@@ -576,7 +586,6 @@ module.exports = grammar({
             token('final'),
             token('finally'),
             token('fixed'),
-            token('flat'),
             token('friend'),
             token('from'),
             token('fvec2'),
@@ -651,7 +660,6 @@ module.exports = grammar({
             token('layout'),
             token('line'),
             token('lineadj'),
-            token('linear'),
             token('lowp'),
             token('macro'),
             token('macro_rules'),
@@ -700,7 +708,6 @@ module.exports = grammar({
             token('restrict'),
             token('row_major'),
             token('samper'),
-            token('sample'),
             token('sampler1D'),
             token('sampler1DArray'),
             token('sampler1DArrayShadow'),
